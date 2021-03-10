@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5333B71-5FAA-447F-9368-945E1853576E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PKUserTools</RootNamespace>
+    <AssemblyName>PKUserTools</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>True</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>False</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="accoremgd">
+      <HintPath>..\p\2019 ссылки\accoremgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcCui">
+      <HintPath>..\p\2019 ссылки\AcCui.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acdbmgd">
+      <HintPath>..\p\2019 ссылки\acdbmgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acmgd">
+      <HintPath>..\p\2019 ссылки\acmgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AdWindows">
+      <HintPath>..\p\2019 ссылки\AdWindows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CSScriptLibrary">
+      <HintPath>..\p\cs-script\lib\CSScriptLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\AppClass.cs" />
+    <Compile Include="Application\RibbonConstructor.cs" />
+    <Compile Include="Commands\BendLine.cs" />
+    <Compile Include="Commands\BreakLine.cs" />
+    <Compile Include="Commands\Commands.cs" />
+    <Compile Include="Commands\DimChain.cs" />
+    <Compile Include="Commands\DimEdit.cs" />
+    <Compile Include="Commands\DrawRods.cs" />
+    <Compile Include="Commands\DrawTails.cs" />
+    <Compile Include="Commands\ExportTable.cs" />
+    <Compile Include="Commands\FunctionClass.cs" />
+    <Compile Include="Commands\HoleSign.cs" />
+    <Compile Include="Commands\ItemInput.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ItemInput\ArmaturItem.cs" />
+    <Compile Include="Commands\ItemInput\ItemSegment.cs" />
+    <Compile Include="Commands\ItemInput\Shape.cs" />
+    <Compile Include="Commands\ItemInput\Sortament.cs" />
+    <Compile Include="Commands\ItemInput\SortamentItem.cs" />
+    <Compile Include="Commands\Junction.cs" />
+    <Compile Include="Commands\LineSum.cs" />
+    <Compile Include="Commands\MultiEditText.cs" />
+    <Compile Include="Commands\MultiLeader.cs" />
+    <Compile Include="Commands\PatternCopy\PatternCopy.cs" />
+    <Compile Include="Commands\PatternCopy\StepsParser.cs" />
+    <Compile Include="Commands\TableFromClipboard.cs" />
+    <Compile Include="Commands\TableImport.cs" />
+    <Compile Include="Commands\TransForm.cs" />
+    <Compile Include="Commands\XdataTools.cs" />
+    <Compile Include="EditorInput\Input.cs" />
+    <Compile Include="ExportTable\Table.cs" />
+    <Compile Include="ExportTable\TablePage.cs" />
+    <Compile Include="ExportTable\TableTranslator.cs" />
+    <Compile Include="ExportTable\TextCell.cs" />
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeometryDrawing\GeometryDrawing.cs" />
+    <Compile Include="ISpecification.cs" />
+    <Compile Include="Measurings\Units.cs" />
+    <Compile Include="Measurings\UnitsForm.cs" />
+    <Compile Include="Measurings\UnitsForm.Designer.cs">
+      <DependentUpon>UnitsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RebarDrawing\Geometry.cs" />
+    <Compile Include="RebarDrawing\RebarDrawing.cs" />
+    <Compile Include="SpecificationGroup.cs" />
+    <Compile Include="Utilities\AttributeEditor.cs" />
+    <Compile Include="Utilities\ChangeDrawingProperty.cs" />
+    <Compile Include="Utilities\LayoutTools.cs">
+      <DependentUpon>MyExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Messaging.cs" />
+    <Compile Include="Utilities\MLeaderDraw.cs" />
+    <Compile Include="Utilities\MyExtensions.cs" />
+    <Compile Include="Utilities\PKLayerManager.cs" />
+    <Compile Include="Utilities\PKReflection.cs" />
+    <Compile Include="Utilities\PropertyWorker\Property.cs" />
+    <Compile Include="Utilities\PropertyWorker\PropertyWorker.cs" />
+    <Compile Include="Utilities\PropertyWorker\PropertyWrapper.cs" />
+    <Compile Include="Utilities\ReadToVor.cs" />
+    <Compile Include="Utilities\Sorters.cs" />
+    <Compile Include="Utilities\TableSource.cs" />
+    <Compile Include="Utilities\TransactionHelper.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+    <Compile Include="Utilities\UtilityClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measurings\UnitsForm.resx">
+      <DependentUpon>UnitsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Icons.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\PatternCopy" />
+    <Folder Include="RebarDrawing" />
+    <Folder Include="GeometryDrawing" />
+    <Folder Include="Utilities\PropertyWorker" />
+    <Folder Include="Measurings" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
