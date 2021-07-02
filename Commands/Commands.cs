@@ -172,6 +172,12 @@ namespace PKUserTools.Commands
 			var ls=new LineSum();
 			ls.LengthList();
 		}
+		[CommandMethod("PKCoordsList",CommandFlags.UsePickSet)]
+		public void CoordsList()
+		{
+			var ls=new LineSum();
+			ls.CoordsList();
+		}
 		[CommandMethod("PKDrawRebar")]
 		public void DrawRebar()
 		{
