@@ -46,23 +46,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="accoremgd">
-      <HintPath>..\p\2019 ссылки\accoremgd.dll</HintPath>
+      <HintPath>..\p\2022 ссылки\accoremgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AcCui">
-      <HintPath>..\p\2019 ссылки\AcCui.dll</HintPath>
+      <HintPath>..\p\2022 ссылки\AcCui.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="acdbmgd">
-      <HintPath>..\p\2019 ссылки\acdbmgd.dll</HintPath>
+      <HintPath>..\p\2022 ссылки\acdbmgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="acmgd">
-      <HintPath>..\p\2019 ссылки\acmgd.dll</HintPath>
+      <HintPath>..\p\2022 ссылки\acmgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AdWindows">
-      <HintPath>..\p\2019 ссылки\AdWindows.dll</HintPath>
+      <HintPath>..\p\2022 ссылки\AdWindows.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="CSScriptLibrary">
