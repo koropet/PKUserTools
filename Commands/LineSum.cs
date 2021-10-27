@@ -91,30 +91,8 @@ namespace PKUserTools.Commands
 		{
 			base.Execute();
 			
-			if(delimiter=="\n")
-			{
-				Tweet("Вертикальная группировка");
-			}
-			else if(delimiter=="\t")
-			{
-				Tweet("Горизонтальная группировка");
-			}
-			
 			var list=new List<string>();
-			var sset=Input.Objects("Выберите полилинии и отрезки",new [] {"Mode", "РЕжим"}, (s,e)=>
-			                       {
-			                       	if(delimiter=="\t")
-			                       	{
-			                       		delimiter="\n";
-			                       		Tweet("Вертикальная группировка");
-			                       	}
-			                       	else if(delimiter=="\n")
-			                       	{
-			                       		delimiter="\t";
-			                       		Tweet("Горизонтальная группировка");
-			                       	}
-			                       }
-			                      ); if(Input.StatusBad) return;
+			var sset=Input.Objects("Выберите полилинии, отрезки или точки"); if(Input.StatusBad) return;
 			
 			using(var th=new TransactionHelper())
 			{
@@ -139,10 +117,16 @@ namespace PKUserTools.Commands
 						pt=l_o.EndPoint;
 						list.Add(String.Format("{0:F3}/t{1:F3}",pt.X,pt.Y));
 					}
+					if(o is DBPoint)
+					{
+						var pt = (o as DBPoint).Position;
+						
+						list.Add(String.Format("{0:F3}/t{1:F3}",pt.X,pt.Y));
+					}
 				}
 			}
 			
-			Clipboard.SetText(list.Aggregate((s1,s2)=>s1+delimiter+s2));
+			Clipboard.SetText(list.Aggregate((s1,s2)=>s1+"\n"+s2));
 		}
 	}
 }
