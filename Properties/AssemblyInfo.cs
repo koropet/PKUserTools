@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("Koropet")]
 [assembly: AssemblyProduct ("PKUserTools")]
-[assembly: AssemblyCopyright ("Copyright © Koropet 2018")]
+[assembly: AssemblyCopyright ("Copyright © Koropet 2021")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 // Параметр ComVisible со значением FALSE делает типы в сборке невидимыми 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номер построения и номер редакции по умолчанию, 
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion ("1.5")]
-[assembly: AssemblyFileVersion ("1.5")]
+[assembly: AssemblyVersion ("1.5.0.1")]
+[assembly: AssemblyFileVersion ("1.5.0.1")]

@@ -239,10 +239,16 @@ namespace PKUserTools.Commands
 		[CommandMethod("PKSample",CommandFlags.UsePickSet)]
 		public void Sample()
 		{
-			//PKUserTools.Utilities.PropertyWorker.PropertyWorker.AreaLeader();
+			//PKUserTools.Utilities.PropertyWorker.PropertyWorker.TestCommand();
 			//Junction.CommandResult();
 			//Utilities.PKReflection.ShowFields();
 			
+		}
+		
+		[CommandMethod("PKAreaLeader",CommandFlags.UsePickSet)]
+		public void AreaLeader()
+		{
+			PKUserTools.Utilities.PropertyWorker.PropertyWorker.AreaLeader();
 		}
 		
 		[CommandMethod("PKTableImport")]
