@@ -128,6 +128,10 @@ namespace PKUserTools.Utilities
 				result = new Point3d(minx * 0.5 + maxx * 0.5, miny * 0.5 + maxy * 0.5, 0);
 
 			}
+			else if (transformed is BlockReference)
+			{
+				result = ((BlockReference)transformed).Position;
+			}
 			else
 			{
 				HasIntersect = false;

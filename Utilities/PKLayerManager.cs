@@ -24,7 +24,7 @@ namespace PKUserTools.Utilities
 	/// </summary>
 	public class PKLayerManager:IDisposable
 	{
-		static string commandLayer=""; 
+		static string commandLayer="";
 		static string CurrentLayer="";
 		public static LayerManagerOption Mode;
 		static Dictionary<LayerManagerOption,Action<Entity>> actions = new Dictionary<LayerManagerOption,Action<Entity>>()
@@ -53,8 +53,23 @@ namespace PKUserTools.Utilities
 			get {
 				return commandLayer;
 			}
-			set {
-				commandLayer = value;
+			set
+			{
+				var acDoc = App.DocumentManager.MdiActiveDocument;
+				var acCurDb = acDoc.Database;
+				
+				bool success=false;
+				using (var tr = acCurDb.TransactionManager.StartTransaction())
+				{
+					var lt = tr.GetObject(acCurDb.LayerTableId,OpenMode.ForRead) as LayerTable;
+					foreach (ObjectId layerId in lt)
+					{
+						var layer = tr.GetObject (layerId, OpenMode.ForWrite) as LayerTableRecord;
+						if(layer.Name==commandLayer) success=true;
+					}
+				}
+				
+				if(success) commandLayer = value;
 			}
 		}
 

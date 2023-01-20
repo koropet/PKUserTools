@@ -413,6 +413,7 @@ namespace PKUserTools.Utilities
 				}
 			}
 		}
+		
 		public static void ListAttributes()
 		{
 			var contents = new List<string>();
@@ -450,6 +451,28 @@ namespace PKUserTools.Utilities
 			Console.WriteLine(output);
 			
 			Clipboard.SetText(output);
+		}
+		public static void MoveAttributes()
+		{
+			var acDoc = App.DocumentManager.MdiActiveDocument;
+			var acCurDb = acDoc.Database;
+			var acEd = acDoc.Editor;
+			
+			var sset=Input.Objects("Выберите блоки"); if(Input.StatusBad) return;
+			using( var th=new TransactionHelper())
+			{
+				var blockrefs=th.EditObjects(sset).OfType<BlockReference>();
+				foreach(var br in blockrefs)
+				{
+					foreach(ObjectId attRef_id in br.AttributeCollection)
+					{
+						var attRef = th.EditObject(attRef_id) as AttributeReference;
+						Messaging.Tweet("Position before: " + attRef.Position);
+						attRef.Position = attRef.Position.Add(new Vector3d(50,0,0));
+						Messaging.Tweet("Position after: " + attRef.Position);
+					}
+				}
+			}
 		}
 	}
 	internal class AttributeEditorSettings

@@ -242,6 +242,7 @@ namespace PKUserTools.Commands
 			//PKUserTools.Utilities.PropertyWorker.PropertyWorker.TestCommand();
 			//Junction.CommandResult();
 			//Utilities.PKReflection.ShowFields();
+			Utilities.AttributeEditor.MoveAttributes();
 			
 		}
 		
